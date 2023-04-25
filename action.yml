@@ -1,0 +1,16 @@
+# action.yml
+name: 'Organization Contributors'
+description: 'Listing organization contributors'
+inputs:
+  org:
+    description: 'Organization name'
+    required: true
+  output:
+    description: 'The output file name'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.org }}
+    - ${{ inputs.output }}
